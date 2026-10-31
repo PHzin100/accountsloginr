@@ -1,1921 +1,472 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Gilvania Andrade | Contabilidade e Cálculos Trabalhistas</title>
-
-    <meta name="description"
-          content="Gilvania Andrade - Contabilidade, consultoria contábil, tributária, gestão empresarial e cálculos trabalhistas em Aracaju - Sergipe.">
-
-    <meta name="keywords"
-          content="contabilidade Aracaju, contador Aracaju, cálculos trabalhistas, consultoria contábil, consultoria tributária, Gilvania Andrade">
-
-    <meta name="author" content="Andracont Assessoria e Consultoria Contábil Ltda.">
-
-    <!-- Bootstrap -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    >
-
-    <!-- Bootstrap Icons -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    >
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet"
-    >
-
-    <style>
-
-        :root {
-            --primary: #0b3d5c;
-            --primary-dark: #062b41;
-            --secondary: #14a6a6;
-            --accent: #d9a441;
-            --light: #f5f8fa;
-            --dark: #17232d;
-            --text: #52616b;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text);
-            background: #fff;
-            line-height: 1.7;
-        }
-
-        h1, h2, h3, h4, h5 {
-            color: var(--dark);
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================== */
-
-        .navbar {
-            background: rgba(6, 43, 65, 0.97);
-            padding: 15px 0;
-            transition: .3s;
-        }
-
-        .navbar-brand {
-            color: #fff !important;
-            font-weight: 800;
-            font-size: 1.25rem;
-        }
-
-        .navbar-brand span {
-            color: var(--accent);
-        }
-
-        .navbar .nav-link {
-            color: rgba(255,255,255,.85);
-            font-weight: 500;
-            margin-left: 15px;
-            transition: .3s;
-        }
-
-        .navbar .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .btn-nav {
-            background: var(--accent);
-            color: #17232d !important;
-            border-radius: 50px;
-            padding: 9px 20px !important;
-            font-weight: 700 !important;
-        }
-
-        .btn-nav:hover {
-            background: #efbd58;
-        }
-
-        /* =========================
-           HERO
-        ========================== */
-
-        .hero {
-            min-height: 92vh;
-            background:
-                linear-gradient(
-                    110deg,
-                    rgba(6,43,65,.97),
-                    rgba(11,61,92,.88)
-                ),
-                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2000&q=80")
-                center/cover;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border: 1px solid rgba(255,255,255,.08);
-            border-radius: 50%;
-            right: -180px;
-            bottom: -180px;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            color: #fff;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255,255,255,.1);
-            border: 1px solid rgba(255,255,255,.15);
-            padding: 8px 16px;
-            border-radius: 50px;
-            color: #fff;
-            font-size: .9rem;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 {
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.7rem, 6vw, 5rem);
-            line-height: 1.08;
-            max-width: 800px;
-        }
-
-        .hero h1 span {
-            color: var(--accent);
-        }
-
-        .hero p {
-            color: rgba(255,255,255,.82);
-            font-size: 1.15rem;
-            max-width: 650px;
-            margin: 25px 0 32px;
-        }
-
-        .btn-primary-custom {
-            background: var(--accent);
-            color: #17232d;
-            border: none;
-            padding: 13px 27px;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: .3s;
-        }
-
-        .btn-primary-custom:hover {
-            background: #efbd58;
-            transform: translateY(-2px);
-            color: #17232d;
-        }
-
-        .btn-outline-custom {
-            color: #fff;
-            border: 1px solid rgba(255,255,255,.4);
-            padding: 12px 27px;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-left: 8px;
-            transition: .3s;
-        }
-
-        .btn-outline-custom:hover {
-            background: #fff;
-            color: var(--primary);
-        }
-
-        /* =========================
-           STATS
-        ========================== */
-
-        .stats {
-            margin-top: -55px;
-            position: relative;
-            z-index: 5;
-        }
-
-        .stat-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 25px;
-            height: 100%;
-            box-shadow: 0 15px 45px rgba(13,40,60,.12);
-            border: 1px solid #edf1f4;
-        }
-
-        .stat-icon {
-            width: 48px;
-            height: 48px;
-            background: rgba(20,166,166,.1);
-            color: var(--secondary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        .stat-card h4 {
-            margin-bottom: 3px;
-        }
-
-        .stat-card small {
-            color: #7b8991;
-        }
-
-        /* =========================
-           SECTIONS
-        ========================== */
-
-        section {
-            padding: 95px 0;
-        }
-
-        .section-label {
-            color: var(--secondary);
-            font-size: .8rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 18px;
-        }
-
-        .section-description {
-            max-width: 680px;
-            color: #687780;
-        }
-
-        /* =========================
-           ABOUT
-        ========================== */
-
-        .about-section {
-            background: #fff;
-        }
-
-        .about-box {
-            background: var(--light);
-            border-radius: 22px;
-            padding: 40px;
-            height: 100%;
-        }
-
-        .about-box i {
-            color: var(--secondary);
-            font-size: 2.3rem;
-        }
-
-        .about-highlight {
-            border-left: 4px solid var(--accent);
-            padding-left: 18px;
-            margin-top: 25px;
-            font-style: italic;
-            color: #42515a;
-        }
-
-        /* =========================
-           SERVICES
-        ========================== */
-
-        .services-section {
-            background: var(--light);
-        }
-
-        .service-card {
-            background: #fff;
-            border-radius: 18px;
-            padding: 32px;
-            height: 100%;
-            border: 1px solid #e8eef1;
-            transition: .3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 40px rgba(12,50,70,.1);
-            border-color: transparent;
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            background: rgba(11,61,92,.08);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            margin-bottom: 22px;
-        }
-
-        .service-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            font-size: .94rem;
-            color: #6c7b84;
-        }
-
-        /* =========================
-           WHY US
-        ========================== */
-
-        .why-section {
-            background: #fff;
-        }
-
-        .why-item {
-            display: flex;
-            gap: 18px;
-            margin-bottom: 28px;
-        }
-
-        .why-icon {
-            min-width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--primary);
-            color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .why-item h5 {
-            margin-bottom: 4px;
-        }
-
-        .why-item p {
-            margin: 0;
-            font-size: .92rem;
-        }
-
-        /* =========================
-           AREAS
-        ========================== */
-
-        .areas-section {
-            background: var(--primary);
-            color: #fff;
-        }
-
-        .areas-section .section-label {
-            color: var(--accent);
-        }
-
-        .areas-section .section-title {
-            color: #fff;
-        }
-
-        .areas-section p {
-            color: rgba(255,255,255,.75);
-        }
-
-        .area-card {
-            background: rgba(255,255,255,.07);
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 16px;
-            padding: 25px;
-            height: 100%;
-            transition: .3s;
-        }
-
-        .area-card:hover {
-            background: rgba(255,255,255,.12);
-        }
-
-        .area-card i {
-            font-size: 1.8rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .area-card h5 {
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        /* =========================
-           COMPANY
-        ========================== */
-
-        .company-section {
-            background: var(--light);
-        }
-
-        .company-info {
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #e8eef1;
-        }
-
-        .company-header {
-            background: var(--primary);
-            color: #fff;
-            padding: 28px;
-        }
-
-        .company-header h3 {
-            color: #fff;
-            margin-bottom: 5px;
-        }
-
-        .company-header p {
-            margin: 0;
-            color: rgba(255,255,255,.7);
-        }
-
-        .info-row {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 14px 25px;
-            border-bottom: 1px solid #edf1f3;
-        }
-
-        .info-row:last-child {
-            border-bottom: 0;
-        }
-
-        .info-label {
-            color: #75848d;
-            font-size: .9rem;
-        }
-
-        .info-value {
-            color: var(--dark);
-            font-weight: 600;
-            text-align: right;
-        }
-
-        /* =========================
-           CONTACT
-        ========================== */
-
-        .contact-section {
-            background: #fff;
-        }
-
-        .contact-card {
-            border-radius: 20px;
-            padding: 32px;
-            background: var(--light);
-            height: 100%;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
-        .contact-item i {
-            color: var(--secondary);
-            font-size: 1.4rem;
-            margin-top: 3px;
-        }
-
-        .contact-item strong {
-            display: block;
-            color: var(--dark);
-        }
-
-        .contact-item a {
-            color: var(--text);
-        }
-
-        .contact-item a:hover {
-            color: var(--secondary);
-        }
-
-        .map-box {
-            border-radius: 20px;
-            min-height: 100%;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    rgba(6,43,65,.8),
-                    rgba(6,43,65,.8)
-                ),
-                url("https://images.unsplash.com/photo-1524666041070-9b8767a2f6e8?auto=format&fit=crop&w=1200&q=80")
-                center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-            text-align: center;
-            color: #fff;
-        }
-
-        .map-box i {
-            font-size: 3rem;
-            color: var(--accent);
-        }
-
-        .map-box h4 {
-            color: #fff;
-            margin-top: 15px;
-        }
-
-        /* =========================
-           CTA
-        ========================== */
-
-        .cta {
-            padding: 75px 0;
-            background:
-                linear-gradient(
-                    120deg,
-                    var(--secondary),
-                    #087b8c
-                );
-            color: #fff;
-        }
-
-        .cta h2 {
-            color: #fff;
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-        }
-
-        .cta p {
-            color: rgba(255,255,255,.85);
-        }
-
-        .btn-white {
-            background: #fff;
-            color: var(--primary);
-            border-radius: 50px;
-            padding: 13px 28px;
-            font-weight: 700;
-            transition: .3s;
-        }
-
-        .btn-white:hover {
-            background: #f1f1f1;
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* =========================
-           FOOTER
-        ========================== */
-
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255,255,255,.65);
-            padding: 55px 0 25px;
-        }
-
-        footer h5 {
-            color: #fff;
-        }
-
-        footer a {
-            color: rgba(255,255,255,.65);
-        }
-
-        footer a:hover {
-            color: var(--accent);
-        }
-
-        .footer-brand {
-            color: #fff;
-            font-weight: 800;
-            font-size: 1.3rem;
-        }
-
-        .footer-brand span {
-            color: var(--accent);
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.08);
-            color: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 7px;
-            transition: .3s;
-        }
-
-        .social-link:hover {
-            background: var(--accent);
-            color: var(--dark);
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,.08);
-            margin-top: 35px;
-            padding-top: 22px;
-            font-size: .82rem;
-        }
-
-        /* =========================
-           WHATSAPP
-        ========================== */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            width: 58px;
-            height: 58px;
-            border-radius: 50%;
-            background: #25d366;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            z-index: 1000;
-            box-shadow: 0 8px 25px rgba(37,211,102,.35);
-            transition: .3s;
-        }
-
-        .whatsapp-float:hover {
-            color: #fff;
-            transform: scale(1.08);
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================== */
-
-        @media (max-width: 991px) {
-
-            .navbar .nav-link {
-                margin-left: 0;
-                padding: 10px 0;
-            }
-
-            .hero {
-                min-height: 85vh;
-            }
-
-            .stats {
-                margin-top: 30px;
-            }
-
-            section {
-                padding: 70px 0;
-            }
-
-        }
-
-        @media (max-width: 767px) {
-
-            .hero {
-                min-height: 90vh;
-            }
-
-            .hero h1 {
-                font-size: 2.7rem;
-            }
-
-            .btn-outline-custom {
-                margin-left: 0;
-                margin-top: 10px;
-                display: inline-block;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .info-row {
-                display: block;
-            }
-
-            .info-value {
-                text-align: left;
-                margin-top: 3px;
-            }
-
-            .cta h2 {
-                font-size: 2rem;
-            }
-
-        }
-
-    </style>
-</head>
-
-<body>
-
-<!-- =========================
-     NAVBAR
-========================== -->
-
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-
-        <a class="navbar-brand" href="#inicio">
-            GILVANIA <span>ANDRADE</span>
-        </a>
-
-        <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menu"
-            aria-controls="menu"
-            aria-expanded="false"
-            aria-label="Abrir menu"
-        >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="menu">
-
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#inicio">Início</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#sobre">Sobre</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#servicos">Serviços</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#empresa">Empresa</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#contato">Contato</a>
-                </li>
-
-                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-                    <a
-                        class="nav-link btn-nav"
-                        href="https://wa.me/5579996644202"
-                        target="_blank"
-                    >
-                        <i class="bi bi-whatsapp"></i>
-                        Fale Conosco
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-    </div>
-</nav>
-
-
-<!-- =========================
-     HERO
-========================== -->
-
-<header class="hero" id="inicio">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                <i class="bi bi-patch-check-fill"></i>
-                Contabilidade e Consultoria em Aracaju - SE
-            </div>
-
-            <h1>
-                Contabilidade que
-                <span>cuida do seu negócio.</span>
-            </h1>
-
-            <p>
-                Soluções contábeis, tributárias, empresariais e trabalhistas
-                para ajudar empresas e profissionais a tomar decisões com
-                mais segurança, organização e tranquilidade.
-            </p>
-
-            <div>
-
-                <a
-                    href="https://wa.me/5579996644202?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20contabilidade."
-                    target="_blank"
-                    class="btn btn-primary-custom"
-                >
-                    <i class="bi bi-whatsapp me-2"></i>
-                    Solicitar atendimento
-                </a>
-
-                <a
-                    href="#servicos"
-                    class="btn btn-outline-custom"
-                >
-                    Conheça nossos serviços
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     STATS
-========================== -->
-
-<div class="container stats">
-
-    <div class="row g-4">
-
-        <div class="col-md-4">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-building"></i>
-                </div>
-
-                <h4>Empresa Ativa</h4>
-                <small>CNPJ regularizado</small>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-award"></i>
-                </div>
-
-                <h4>CRC SE-000981/O</h4>
-                <small>Registro profissional</small>
-
-            </div>
-
-        </div>
-
-        <div class="col-md-4">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-geo-alt"></i>
-                </div>
-
-                <h4>Aracaju - Sergipe</h4>
-                <small>Siqueira Campos</small>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================
-     SOBRE
-========================== -->
-
-<section class="about-section" id="sobre">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-6">
-
-                <div class="section-label">
-                    Sobre nós
-                </div>
-
-                <h2 class="section-title">
-                    Experiência, organização e atenção aos detalhes.
-                </h2>
-
-                <p>
-                    A <strong>Gilvania Andrade - Contabilidade e Cálculos
-                    Trabalhistas</strong> atua oferecendo soluções na área
-                    contábil, tributária, empresarial e trabalhista.
-                </p>
-
-                <p>
-                    Nossa proposta é oferecer um atendimento próximo e
-                    responsável, auxiliando empresas e profissionais na
-                    organização das suas obrigações e na tomada de decisões.
-                </p>
-
-                <div class="about-highlight">
-                    "Mais do que números, trabalhamos para transformar
-                    informações contábeis em segurança para o seu negócio."
-                </div>
-
-            </div>
-
-            <div class="col-lg-6">
-
-                <div class="about-box">
-
-                    <i class="bi bi-calculator"></i>
-
-                    <h3 class="mt-3">
-                        Assessoria para o seu negócio
-                    </h3>
-
-                    <p>
-                        A contabilidade pode ser uma importante ferramenta
-                        para compreender a realidade financeira e tributária
-                        de uma empresa.
-                    </p>
-
-                    <p class="mb-0">
-                        Trabalhamos com informações organizadas, atendimento
-                        profissional e soluções adequadas às necessidades
-                        de cada cliente.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERVIÇOS
-========================== -->
-
-<section class="services-section" id="servicos">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                O que fazemos
-            </div>
-
-            <h2 class="section-title">
-                Nossos serviços
-            </h2>
-
-            <p class="section-description mx-auto">
-                Soluções pensadas para apoiar empresas, profissionais e
-                empreendedores em diferentes necessidades contábeis e
-                empresariais.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <!-- Serviço 1 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-calculator-fill"></i>
-                    </div>
-
-                    <h4>Contabilidade</h4>
-
-                    <p>
-                        Serviços relacionados à escrituração, organização
-                        contábil e acompanhamento das informações financeiras
-                        da empresa.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Serviço 2 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-file-earmark-text-fill"></i>
-                    </div>
-
-                    <h4>Consultoria Contábil</h4>
-
-                    <p>
-                        Orientação e apoio para compreender informações
-                        contábeis e auxiliar na organização das atividades
-                        empresariais.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Serviço 3 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-receipt-cutoff"></i>
-                    </div>
-
-                    <h4>Consultoria Tributária</h4>
-
-                    <p>
-                        Apoio na análise e organização das questões
-                        tributárias relacionadas às atividades empresariais.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Serviço 4 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-person-workspace"></i>
-                    </div>
-
-                    <h4>Cálculos Trabalhistas</h4>
-
-                    <p>
-                        Elaboração e apoio em cálculos relacionados às
-                        relações trabalhistas, conforme as informações
-                        apresentadas pelo cliente.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Serviço 5 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-graph-up-arrow"></i>
-                    </div>
-
-                    <h4>Gestão Empresarial</h4>
-
-                    <p>
-                        Consultoria em gestão empresarial para auxiliar
-                        empreendedores na organização e acompanhamento
-                        das atividades do negócio.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- Serviço 6 -->
-
-            <div class="col-md-6 col-lg-4">
-
-                <div class="service-card">
-
-                    <div class="service-icon">
-                        <i class="bi bi-mortarboard-fill"></i>
-                    </div>
-
-                    <h4>Treinamentos</h4>
-
-                    <p>
-                        Treinamento em desenvolvimento profissional e
-                        gerencial para aprimoramento de conhecimentos
-                        e processos.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     DIFERENCIAIS
-========================== -->
-
-<section class="why-section">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-5">
-
-                <div class="section-label">
-                    Nosso compromisso
-                </div>
-
-                <h2 class="section-title">
-                    Uma parceria para cuidar da sua empresa.
-                </h2>
-
-                <p>
-                    Uma boa organização contábil pode ajudar o empreendedor
-                    a enxergar melhor o negócio e tomar decisões baseadas
-                    em informações.
-                </p>
-
-            </div>
-
-            <div class="col-lg-7">
-
-                <div class="why-item">
-
-                    <div class="why-icon">
-                        <i class="bi bi-check-lg"></i>
-                    </div>
-
-                    <div>
-                        <h5>Atendimento próximo</h5>
-
-                        <p>
-                            Comunicação clara e atendimento direcionado
-                            às necessidades de cada cliente.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="why-item">
-
-                    <div class="why-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-
-                    <div>
-                        <h5>Responsabilidade</h5>
-
-                        <p>
-                            Compromisso com a organização e o tratamento
-                            responsável das informações fornecidas.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="why-item">
-
-                    <div class="why-icon">
-                        <i class="bi bi-lightbulb"></i>
-                    </div>
-
-                    <div>
-                        <h5>Orientação</h5>
-
-                        <p>
-                            Informações apresentadas de forma objetiva para
-                            facilitar o entendimento do cliente.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="why-item">
-
-                    <div class="why-icon">
-                        <i class="bi bi-headset"></i>
-                    </div>
-
-                    <div>
-                        <h5>Suporte profissional</h5>
-
-                        <p>
-                            Apoio em questões contábeis, tributárias,
-                            empresariais e trabalhistas.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ÁREAS DE ATUAÇÃO
-========================== -->
-
-<section class="areas-section">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                Especialidades
-            </div>
-
-            <h2 class="section-title">
-                Áreas de atuação
-            </h2>
-
-            <p class="mx-auto">
-                Atuação baseada nas atividades econômicas registradas
-                pela empresa.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="area-card">
-
-                    <i class="bi bi-calculator"></i>
-
-                    <h5>Atividades de Contabilidade</h5>
-
-                    <p class="mb-0">
-                        CNAE 69.20-6-01
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="area-card">
-
-                    <i class="bi bi-briefcase"></i>
-
-                    <h5>Consultoria em Gestão</h5>
-
-                    <p class="mb-0">
-                        CNAE 70.20-4-00
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="area-card">
-
-                    <i class="bi bi-file-earmark-check"></i>
-
-                    <h5>Consultoria e Auditoria</h5>
-
-                    <p class="mb-0">
-                        CNAE 69.20-6-02
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-md-6 col-lg-3">
-
-                <div class="area-card">
-
-                    <i class="bi bi-person-video3"></i>
-
-                    <h5>Treinamento Profissional</h5>
-
-                    <p class="mb-0">
-                        CNAE 85.99-6-04
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     EMPRESA
-========================== -->
-
-<section class="company-section" id="empresa">
-
-    <div class="container">
-
-        <div class="row align-items-center g-5">
-
-            <div class="col-lg-5">
-
-                <div class="section-label">
-                    Informações cadastrais
-                </div>
-
-                <h2 class="section-title">
-                    Conheça nossa empresa
-                </h2>
-
-                <p>
-                    Informações institucionais e cadastrais da
-                    Andracont Assessoria e Consultoria Contábil Ltda.
-                </p>
-
-                <div class="d-flex align-items-center gap-3 mt-4">
-
-                    <div
-                        style="
-                            width:55px;
-                            height:55px;
-                            background:#0b3d5c;
-                            color:#fff;
-                            border-radius:15px;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            font-size:1.4rem;
-                        "
-                    >
-                        <i class="bi bi-building-check"></i>
-                    </div>
-
-                    <div>
-                        <strong class="d-block">
-                            Situação cadastral
-                        </strong>
-
-                        <span style="color:#14a6a6;">
-                            <i class="bi bi-circle-fill"
-                               style="font-size:8px;"></i>
-                            Ativa
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-7">
-
-                <div class="company-info">
-
-                    <div class="company-header">
-
-                        <h3>
-                            Andracont Assessoria e Consultoria Contábil Ltda.
-                        </h3>
-
-                        <p>
-                            Gilvania Andrade - Contabilidade e Cálculos Trabalhistas
-                        </p>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">CNPJ</span>
-
-                        <span class="info-value">
-                            64.542.631/0001-15
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Natureza Jurídica</span>
-
-                        <span class="info-value">
-                            Sociedade Empresária Limitada
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Porte</span>
-
-                        <span class="info-value">
-                            Micro Empresa
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Regime Tributário</span>
-
-                        <span class="info-value">
-                            Simples Nacional
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Capital Social</span>
-
-                        <span class="info-value">
-                            R$ 5.000,00
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Data de abertura</span>
-
-                        <span class="info-value">
-                            16/01/2026
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">CRC</span>
-
-                        <span class="info-value">
-                            SE-000981/O
-                        </span>
-
-                    </div>
-
-
-                    <div class="info-row">
-
-                        <span class="info-label">Responsável</span>
-
-                        <span class="info-value">
-                            Gilvania Andrade do Nascimento
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CONTATO
-========================== -->
-
-<section class="contact-section" id="contato">
-
-    <div class="container">
-
-        <div class="text-center mb-5">
-
-            <div class="section-label">
-                Fale conosco
-            </div>
-
-            <h2 class="section-title">
-                Entre em contato
-            </h2>
-
-            <p class="section-description mx-auto">
-                Estamos em Aracaju, Sergipe. Entre em contato para
-                conhecer nossos serviços e solicitar atendimento.
-            </p>
-
-        </div>
-
-        <div class="row g-4">
-
-            <div class="col-lg-5">
-
-                <div class="contact-card">
-
-                    <div class="contact-item">
-
-                        <i class="bi bi-whatsapp"></i>
-
-                        <div>
-
-                            <strong>WhatsApp / Telefone</strong>
-
-                            <a
-                                href="https://wa.me/5579996644202"
-                                target="_blank"
-                            >
-                                (79) 99664-4202
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <i class="bi bi-envelope"></i>
-
-                        <div>
-
-                            <strong>E-mail</strong>
-
-                            <a href="mailto:judite@cednetprovenet.digital">
-                                judite@cednetprovenet.digital
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <i class="bi bi-geo-alt"></i>
-
-                        <div>
-
-                            <strong>Endereço</strong>
-
-                            Rua Goiás, 896<br>
-                            Pavimento Superior<br>
-                            Siqueira Campos<br>
-                            Aracaju - SE<br>
-                            CEP 49075-280
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="contact-item mb-0">
-
-                        <i class="bi bi-person-badge"></i>
-
-                        <div>
-
-                            <strong>Responsável</strong>
-
-                            Gilvania Andrade do Nascimento<br>
-
-                            <span style="font-size:.9rem;">
-                                Sócia-Administradora
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-lg-7">
-
-                <div class="map-box">
-
-                    <div>
-
-                        <i class="bi bi-geo-alt-fill"></i>
-
-                        <h4>
-                            Estamos em Aracaju
-                        </h4>
-
-                        <p>
-                            Rua Goiás, 896 - Siqueira Campos<br>
-                            Aracaju - Sergipe
-                        </p>
-
-                        <a
-                            href="https://www.google.com/maps/search/?api=1&query=Rua+Goias+896+Siqueira+Campos+Aracaju+SE+49075-280"
-                            target="_blank"
-                            class="btn btn-white mt-2"
-                        >
-                            <i class="bi bi-map me-2"></i>
-                            Ver no Google Maps
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CTA
-========================== -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <div class="row align-items-center g-4">
-
-            <div class="col-lg-8">
-
-                <h2>
-                    Precisa de apoio contábil?
-                </h2>
-
-                <p class="mb-0">
-                    Entre em contato e saiba como podemos ajudar
-                    sua empresa.
-                </p>
-
-            </div>
-
-            <div class="col-lg-4 text-lg-end">
-
-                <a
-                    href="https://wa.me/5579996644202?text=Olá!%20Gostaria%20de%20solicitar%20um%20atendimento."
-                    target="_blank"
-                    class="btn btn-white"
-                >
-                    <i class="bi bi-whatsapp me-2"></i>
-                    Falar pelo WhatsApp
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================== -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="row g-5">
-
-            <div class="col-lg-5">
-
-                <div class="footer-brand">
-                    GILVANIA <span>ANDRADE</span>
-                </div>
-
-                <p class="mt-3">
-                    Contabilidade e Cálculos Trabalhistas.
-                    Soluções contábeis e empresariais para
-                    empresas e profissionais.
-                </p>
-
-                <div class="mt-4">
-
-                    <a
-                        href="https://wa.me/5579996644202"
-                        target="_blank"
-                        class="social-link"
-                        aria-label="WhatsApp"
-                    >
-                        <i class="bi bi-whatsapp"></i>
-                    </a>
-
-                    <a
-                        href="mailto:judite@cednetprovenet.digital"
-                        class="social-link"
-                        aria-label="E-mail"
-                    >
-                        <i class="bi bi-envelope"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="col-sm-6 col-lg-3">
-
-                <h5>Menu</h5>
-
-                <ul class="list-unstyled mt-3">
-
-                    <li class="mb-2">
-                        <a href="#inicio">Início</a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="#sobre">Sobre</a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="#servicos">Serviços</a>
-                    </li>
-
-                    <li class="mb-2">
-                        <a href="#empresa">Empresa</a>
-                    </li>
-
-                    <li>
-                        <a href="#contato">Contato</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="col-sm-6 col-lg-4">
-
-                <h5>Contato</h5>
-
-                <p class="mt-3 mb-2">
-                    <i class="bi bi-telephone me-2"></i>
-                    (79) 99664-4202
-                </p>
-
-                <p class="mb-2">
-                    <i class="bi bi-envelope me-2"></i>
-                    judite@cednetprovenet.digital
-                </p>
-
-                <p class="mb-0">
-                    <i class="bi bi-geo-alt me-2"></i>
-                    Aracaju - Sergipe
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="copyright text-center">
-
-            © 2026 Gilvania Andrade - Contabilidade e Cálculos Trabalhistas.
-            Todos os direitos reservados.
-
-            <br>
-
-            <span>
-                Andracont Assessoria e Consultoria Contábil Ltda.
-                | CNPJ 64.542.631/0001-15
-            </span>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<!-- =========================
-     WHATSAPP FLUTUANTE
-========================== -->
-
-<a
-    href="https://wa.me/5579996644202?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações."
-    target="_blank"
-    class="whatsapp-float"
-    aria-label="Falar pelo WhatsApp"
->
-    <i class="bi bi-whatsapp"></i>
+<html lang="pt-BR"><head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v17.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Fábrica de Salgados Gostinho Nobre - Fábrica de Salgados em Betim. Venda para atacado e varejo!</title>
+	<meta name="description" content="Fábrica de Salgados em Betim. Venda para atacado e varejo!">
+	<link rel="canonical" href="https://gostinhonobre.com.br/">
+	<meta property="og:locale" content="pt_BR">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Fábrica de Salgados Gostinho Nobre">
+	<meta property="og:description" content="Fábrica de Salgados em Betim. Venda para atacado e varejo!">
+	<meta property="og:url" content="https://gostinhonobre.com.br/">
+	<meta property="og:site_name" content="Fábrica de Salgados Gostinho Nobre">
+	<meta name="twitter:card" content="summary_large_image">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://gostinhonobre.com.br/#website","url":"https://gostinhonobre.com.br/","name":"F\u00e1brica de Salgados Gostinho Nobre","description":"F\u00e1brica de Salgados em Betim. Venda para atacado e varejo!","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://gostinhonobre.com.br/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"CollectionPage","@id":"https://gostinhonobre.com.br/#webpage","url":"https://gostinhonobre.com.br/","name":"F\u00e1brica de Salgados Gostinho Nobre - F\u00e1brica de Salgados em Betim. Venda para atacado e varejo!","isPartOf":{"@id":"https://gostinhonobre.com.br/#website"},"description":"F\u00e1brica de Salgados em Betim. Venda para atacado e varejo!","breadcrumb":{"@id":"https://gostinhonobre.com.br/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://gostinhonobre.com.br/"]}]},{"@type":"BreadcrumbList","@id":"https://gostinhonobre.com.br/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"In\u00edcio"}]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//www.googletagmanager.com">
+<link rel="alternate" type="application/rss+xml" title="Feed para Fábrica de Salgados Gostinho Nobre »" href="https://gostinhonobre.com.br/feed/">
+<link rel="alternate" type="application/rss+xml" title="Feed de comentários para Fábrica de Salgados Gostinho Nobre »" href="https://gostinhonobre.com.br/comments/feed/">
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://gostinhonobre.com.br/wp-includes/css/dist/block-library/style.min.css?ver=7.1.2" media="all">
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:root :where(.wp-block-icon svg){width: 24px;}
+:where(.wp-block-gallery.is-layout-flex){gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}:where(.wp-block-gallery.is-layout-grid){gap: var( --wp--style--gallery-gap-default, var( --gallery-block--gutter-size, var( --wp--style--block-gap, 0.5em ) ) );}
+:where(.wp-block-latest-posts.is-layout-flex){gap: 1.25em;}:where(.wp-block-latest-posts.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-term-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-term-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+<link rel="stylesheet" id="grw-public-main-css-css" href="https://gostinhonobre.com.br/wp-content/plugins/widget-google-reviews/assets/7.2/css/public-main.css" media="all">
+<link rel="stylesheet" id="aera-fonts-css" href="//fonts.googleapis.com/css?family=Poppins%3A300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%2C900i&amp;subset=latin%2Clatin-ext" media="all">
+<link rel="stylesheet" id="owl-theme-default-min-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/owl.theme.default.min.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="https://gostinhonobre.com.br/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=4.7.0" media="all">
+<link rel="stylesheet" id="avril-editor-style-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/editor-style.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="avril-theme-css-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/theme.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="avril-menus-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/menu.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="avril-widgets-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/widgets.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="avril-main-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/assets/css/main.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="avril-style-css" href="https://gostinhonobre.com.br/wp-content/themes/aera/style.css?ver=7.1.2" media="all">
+<style id="avril-style-inline-css">
+.breadcrumb-content {
+					min-height: 172px;
+				}
+.breadcrumb-area {
+					background-image: url(http://gostinhonobre.com.br/wp-content/uploads/2021/04/cabecalho6-scaled.jpg);
+					background-attachment: scroll;
+				}
+
+/*# sourceURL=avril-style-inline-css */
+</style>
+<link rel="stylesheet" id="avril-parent-style-css" href="https://gostinhonobre.com.br/wp-content/themes/avril/style.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="aera-style-css" href="https://gostinhonobre.com.br/wp-content/themes/aera/style.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="aera-color-default-css" href="https://gostinhonobre.com.br/wp-content/themes/aera/assets/css/color/default.css?ver=7.1.2" media="all">
+<link rel="stylesheet" id="aera-media-query-css" href="https://gostinhonobre.com.br/wp-content/themes/aera/assets/css/responsive.css?ver=7.1.2" media="all">
+<script id="grw-public-main-js-js" defer="defer" src="https://gostinhonobre.com.br/wp-content/plugins/widget-google-reviews/assets/7.2/js/public-main.js"></script>
+<script id="jquery-core-js" src="https://gostinhonobre.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://gostinhonobre.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<link rel="https://api.w.org/" href="https://gostinhonobre.com.br/wp-json/"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://gostinhonobre.com.br/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 7.1.2">
+<meta name="generator" content="Site Kit by Google 1.190.0">
+<!-- Meta tags do Google AdSense adicionadas pelo Site Kit -->
+<meta name="google-adsense-platform-account" content="ca-host-pub-2644536267352236">
+<meta name="google-adsense-platform-domain" content="sitekit.withgoogle.com">
+<!-- Fim das meta tags do Google AdSense adicionadas pelo Site Kit -->
+<meta name="generator" content="Elementor 4.3.5; features: additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+				<style type="text/css">
+			body .header h4.site-title,
+		body .header p.site-description {
+			color: #902d26;
+		}
+		</style>
+	<link rel="icon" href="https://gostinhonobre.com.br/wp-content/uploads/2021/04/cropped-Imagem1-3-32x32.png" sizes="32x32">
+<link rel="icon" href="https://gostinhonobre.com.br/wp-content/uploads/2021/04/cropped-Imagem1-3-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://gostinhonobre.com.br/wp-content/uploads/2021/04/cropped-Imagem1-3-180x180.png">
+<meta name="msapplication-TileImage" content="https://gostinhonobre.com.br/wp-content/uploads/2021/04/cropped-Imagem1-3-270x270.png">
+	<script src="https://gostinhonobre.com.br/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2" defer=""></script></head>
+
+
+<body class="home blog wp-theme-avril wp-child-theme-aera aera-theme header-center header-above-light hfeed elementor-default elementor-kit-185">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Pular para o conteúdo</a>
+	
+	    <!--===// Start: Header
+    =================================-->
+
+<a href="https://gostinhonobre.com.br/" id="custom-header" rel="home">
+	<img fetchpriority="high" src="https://gostinhonobre.com.br/wp-content/uploads/2021/04/cropped-tira5-scaled-1.jpg" width="2000" height="303" alt="Fábrica de Salgados Gostinho Nobre">
 </a>
+<header id="header-section" class="header header-one">
+	
+		<div class="navigator-wrapper" style="min-height: 140.375px;">
+			<!--===// Start: Mobile Toggle
+			=================================-->
+			<div class="theme-mobile-nav sticky-nav "> 
+				<div class="av-container">
+					<div class="av-columns-area">
+						<div class="av-column-12">
+							<div class="theme-mobile-menu">
+								<div class="mobile-logo">
+									<div class="logo">
+																					<a href="https://gostinhonobre.com.br/">
+												<h4 class="site-title">
+													Fábrica de Salgados Gostinho Nobre												</h4>
+											</a>	
+																																<p class="site-description">Fábrica de Salgados em Betim. Venda para atacado e varejo!</p>
+																			</div>
+								</div>
+								<div class="menu-toggle-wrap">
+									<div class="mobile-menu-right"><ul class="header-wrap-right">
+																																													
+										</ul></div>
+									<div class="hamburger-menu">
+										<button type="button" class="menu-toggle">
+											<div class="top-bun"></div>
+											<div class="meat"></div>
+											<div class="bottom-bun"></div>
+										</button>
+									</div>
+								</div>
+								<div id="mobile-m" class="mobile-menu">
+									<button type="button" class="header-close-menu close-style"></button>
+								<ul id="menu-menu-primario-old-old-old-old" class="menu-wrap"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-22 nav-item"><a title="Página inicial" href="https://gostinhonobre.com.br/" class="nav-link" aria-current="page">Página inicial</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-425 nav-item"><a title="Quem Somos" href="https://gostinhonobre.com.br/quem-somos/" class="nav-link">Quem Somos</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-434 nav-item"><a title="A Gostinho Nobre" href="https://gostinhonobre.com.br/quem-somos/#a-gostinho-nobre" class="dropdown-item">A Gostinho Nobre</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-435 nav-item"><a title="Nossa Cultura" href="https://gostinhonobre.com.br/quem-somos/#nossa-cultura" class="dropdown-item">Nossa Cultura</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-437 nav-item"><a title="História" href="https://gostinhonobre.com.br/quem-somos/#historia" class="dropdown-item">História</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-436 nav-item"><a title="Área de Atuação" href="https://gostinhonobre.com.br/quem-somos/#area-de-atuacao" class="dropdown-item">Área de Atuação</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-395 nav-item"><a title="Produtos" href="https://gostinhonobre.com.br/produtos/" class="nav-link">Produtos</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-1120 nav-item"><a title="Padarias e Lanchonetes" href="https://gostinhonobre.com.br/produtos/#salgados-padarias-lanchonetes" class="dropdown-item">Padarias e Lanchonetes</a>
+	<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-458 nav-item"><a title="Salgados Grandes" href="https://gostinhonobre.com.br/produtos/#salgados-grandes-congelados" class="dropdown-item">Salgados Grandes</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-459" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459 nav-item"><a title="Salgados Médios" href="https://gostinhonobre.com.br/produtos/#salgados-medios-congelados" class="dropdown-item">Salgados Médios</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-460 nav-item"><a title="Salgados coquetel" href="https://gostinhonobre.com.br/produtos/#salgadinhos-festa" class="dropdown-item">Salgados coquetel</a></li>
+	</ul>
+</li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1121 nav-item"><a title="Salgadinhos para Festa" href="https://gostinhonobre.com.br/produtos/#salgadinhos-festa" class="dropdown-item">Salgadinhos para Festa</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-171" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-171 nav-item"><a title="Blog" href="https://gostinhonobre.com.br/" class="nav-link" aria-current="page">Blog</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-331 nav-item"><a title="Contato" href="https://gostinhonobre.com.br/contato/" class="nav-link">Contato</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-468 nav-item"><a title="Contatos" href="https://gostinhonobre.com.br/contato/#contatos" class="dropdown-item">Contatos</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-469" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-469 nav-item"><a title="Fale Conosco" href="https://gostinhonobre.com.br/contato/#fale-conosco" class="dropdown-item">Fale Conosco</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-467 nav-item"><a title="Localização" href="https://gostinhonobre.com.br/contato/#localizacao" class="dropdown-item">Localização</a></li>
+</ul>
+</li>
+</ul></div>
+																<div id="mob-h-top" class="mobi-head-top"></div>
+							</div>
+						</div>
+					</div>
+				</div>        
+			</div>
+			<!--===// End: Mobile Toggle
+			=================================-->
+
+			<!--===// Start: Navigation
+			=================================-->
+			<div class="nav-area d-none d-av-block">
+				<div class="navbar-area sticky-nav ">
+					<div class="av-container">
+						<div class="av-columns-area">
+							<div class="av-column-2 my-auto">
+								<div class="logo">
+																			<a href="https://gostinhonobre.com.br/">
+											<h4 class="site-title">
+												Fábrica de Salgados Gostinho Nobre											</h4>
+										</a>	
+																													<p class="site-description">Fábrica de Salgados em Betim. Venda para atacado e varejo!</p>
+																	</div>
+							</div>
+							<div class="av-column-10 my-auto">
+								<div class="theme-menu">
+									<nav class="menubar">
+										 <ul id="menu-menu-primario-old-old-old-old" class="menu-wrap"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-22" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-22 nav-item"><a title="Página inicial" href="https://gostinhonobre.com.br/" class="nav-link" aria-current="page">Página inicial</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-425 nav-item"><a title="Quem Somos" href="https://gostinhonobre.com.br/quem-somos/" class="nav-link">Quem Somos</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-434" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-434 nav-item"><a title="A Gostinho Nobre" href="https://gostinhonobre.com.br/quem-somos/#a-gostinho-nobre" class="dropdown-item">A Gostinho Nobre</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-435" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-435 nav-item"><a title="Nossa Cultura" href="https://gostinhonobre.com.br/quem-somos/#nossa-cultura" class="dropdown-item">Nossa Cultura</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-437" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-437 nav-item"><a title="História" href="https://gostinhonobre.com.br/quem-somos/#historia" class="dropdown-item">História</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-436" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-436 nav-item"><a title="Área de Atuação" href="https://gostinhonobre.com.br/quem-somos/#area-de-atuacao" class="dropdown-item">Área de Atuação</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-395" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-395 nav-item"><a title="Produtos" href="https://gostinhonobre.com.br/produtos/" class="nav-link">Produtos</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1120" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-1120 nav-item"><a title="Padarias e Lanchonetes" href="https://gostinhonobre.com.br/produtos/#salgados-padarias-lanchonetes" class="dropdown-item">Padarias e Lanchonetes</a>
+	<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-458 nav-item"><a title="Salgados Grandes" href="https://gostinhonobre.com.br/produtos/#salgados-grandes-congelados" class="dropdown-item">Salgados Grandes</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-459" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-459 nav-item"><a title="Salgados Médios" href="https://gostinhonobre.com.br/produtos/#salgados-medios-congelados" class="dropdown-item">Salgados Médios</a></li>
+		<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-460 nav-item"><a title="Salgados coquetel" href="https://gostinhonobre.com.br/produtos/#salgadinhos-festa" class="dropdown-item">Salgados coquetel</a></li>
+	</ul>
+</li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1121" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1121 nav-item"><a title="Salgadinhos para Festa" href="https://gostinhonobre.com.br/produtos/#salgadinhos-festa" class="dropdown-item">Salgadinhos para Festa</a></li>
+</ul>
+</li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-171" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home active menu-item-171 nav-item"><a title="Blog" href="https://gostinhonobre.com.br/" class="nav-link" aria-current="page">Blog</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-331" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-331 nav-item"><a title="Contato" href="https://gostinhonobre.com.br/contato/" class="nav-link">Contato</a>
+<span class="mobile-toggler d-av-none" style=""><button type="button" class="fa fa-chevron-right" aria-label="Mobile Toggler"></button></span><ul class="dropdown-menu" aria-labelledby="mobile-toggler d-av-none'&gt;&lt;button type='button' class='fa fa-chevron-right' aria-label='Mobile Toggler'&gt;&lt;/button&gt;&lt;/span&gt;&lt;ul class=" role="menu">
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-468" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-468 nav-item"><a title="Contatos" href="https://gostinhonobre.com.br/contato/#contatos" class="dropdown-item">Contatos</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-469" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-469 nav-item"><a title="Fale Conosco" href="https://gostinhonobre.com.br/contato/#fale-conosco" class="dropdown-item">Fale Conosco</a></li>
+	<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-467" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-467 nav-item"><a title="Localização" href="https://gostinhonobre.com.br/contato/#localizacao" class="dropdown-item">Localização</a></li>
+</ul>
+</li>
+</ul>                   
+									</nav>
+									<div class="menu-right">
+										<ul class="header-wrap-right">
+																																													
+										</ul>                            
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--===// End:  Navigation
+			=================================-->
+		</div>
+		</header>
+<!-- End: Header
+    =================================-->
+ <section id="breadcrumb-section" class="breadcrumb-area breadcrumb-center">
+        <div class="av-container">
+            <div class="av-columns-area">
+                <div class="av-column-12">
+                    <div class="breadcrumb-content">
+                        <div class="breadcrumb-heading">
+								<h2>
+									Visite a página “Quem Somos” e nos conheça um pouco mais, a página de “Contatos” também está pronta! O restante do site está em construção! Desculpem-nos pelo transtorno.								</h2>	
+                        </div>
+						<ol class="breadcrumb-list">
+							<li><a href="https://gostinhonobre.com.br">Página inicial</a></li>						</ol>	
+                    </div>                    
+                </div>
+            </div>
+        </div> <!-- container -->
+    </section>
+		
+	<div id="content" class="avril-content">
+	 <section id="post-section" class="post-section av-py-default blog-page">
+	<div class="av-container">
+		<div class="av-columns-area wow fadeInUp animated" style="visibility: visible;">
+				<div id="av-primary-content" class="av-column-8  wow fadeInUp animated" style="visibility: visible;">
+													<article id="post-1" class="post-items mb-6 post-1 post type-post status-publish format-standard hentry category-sem-categoria">
+	<figure class="post-image">
+	   <a href="https://gostinhonobre.com.br/ola-mundo/1/" class="post-hover">
+					</a>
+		<div class="post-meta imu">
+			<span class="post-list">
+			   <ul class="post-categories"><li><a href="https://gostinhonobre.com.br/ola-mundo/1/"></a><a href="https://gostinhonobre.com.br/category/uncategorized/sem-categoria/" rel="category tag">Sem categoria</a></li></ul>
+			</span>
+		</div>
+	</figure>
+	<div class="post-content">
+		<div class="post-meta up">
+			<span class="posted-on">
+			   <a href="https://gostinhonobre.com.br/date/2021/04/">abr 6 2021</a>
+			</span>
+		</div>
+	   <h5 class="post-title"><a href="https://gostinhonobre.com.br/ola-mundo/1/" rel="bookmark">Visite a página “Quem Somos” e nos conheça um pouco mais, a página de “Contatos” também está pronta! O restante do site está em construção! Desculpem-nos pelo transtorno.</a></h5>
+<p class="wp-block-paragraph">Prezados clientes, nosso site ainda está em construção! Pedimos desculpas pelo transtorno, mas aproveite para pegar nossos contatos e não exite em nos ligar!<br><br>Agradecemos a compreensão!</p>
 
 
-<!-- Bootstrap JS -->
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+<p class="wp-block-paragraph"></p>
+
+
+
+<p class="wp-block-paragraph"></p>
+ 
+		<div class="post-meta down">
+			<span class="author-name">
+				<i class="fa fa-user-secret"></i> <a href="https://gostinhonobre.com.br/author/gnwordpress/">GNwordpress</a>
+			</span>
+			<span class="comments-link">
+				<i class="fa fa-comment"></i> <a href="https://gostinhonobre.com.br/ola-mundo/1/#comments">1 Comentários</a>
+			</span>
+		</div>
+	</div>
+</article>			
+			
+					<!-- Pagination -->
+										<!-- Pagination -->	
+				
+							</div>
+			<div id="av-secondary-content" class="av-column-4 mb-6 mb-av-0 wow fadeInUp animated" style="visibility: visible;">
+	<section class="sidebar">
+		<aside id="grw_widget-2" class="widget google-reviews-widget"><h5 class="widget-title">Avaliações no Google</h5><div class="wp-gr rpi" data-id="grw_widget-2" data-layout="" data-exec="true" data-options="{&quot;text_size&quot;:&quot;&quot;,&quot;trans&quot;:{&quot;read more&quot;:&quot;leia mais&quot;}}"><div class="wp-google-list"><div class="grw-header"><div class="grw-header-inner rpi-flx rpi-row12"><div class="grw-img-wrap"><img class="grw-img" src="http://gostinhonobre.com.br/wp-content/uploads/2021/04/WhatsApp-Image-2020-09-15-at-09.55.54-1.jpeg" loading="lazy" alt="Gostinho Nobre - Fábrica de Salgados place picture" width="50" height="50" onerror="if(this.src!='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')this.src='data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';"></div><div class="rpi-flx rpi-col8"><div class="wp-google-name"><a href="https://maps.google.com/?cid=13822821150547561648" target="_blank" rel="nofollow noopener">Gostinho Nobre - Fábrica de Salgados</a></div><span class="rpi-stars" style="--rating:5.0">5.0</span><div class="wp-google-powered" role="img" aria-label="powered by Google">powered by <span class="rpi-goog" aria-hidden="true"></span></div><div class="wp-google-wr"><a href="https://search.google.com/local/writereview?placeid=ChIJzYW8mCnApgARsMwkmJmG1L8" target="_blank" rel="nofollow noopener" onclick="return rplg_leave_review_window.call(this)">avalie-nos no<span class="rpi-logo rpi-logo-google" aria-hidden="true"></span></a></div></div></div></div><div class="rpi-flx rpi-col16"></div><a href="https://search.google.com/local/reviews?placeid=" class="wp-google-url" target="_blank" rel="nofollow noopener">Ver todas as avaliações</a></div></div></aside><aside id="search-2" class="widget widget_search"><form role="search" method="get" class="search-form" action="https://gostinhonobre.com.br/">
+				<label>
+					<span class="screen-reader-text">Pesquisar por:</span>
+					<input type="search" class="search-field" placeholder="Pesquisar …" value="" name="s">
+				</label>
+				<input type="submit" class="search-submit" value="Pesquisar">
+			</form></aside>
+		<aside id="recent-posts-2" class="widget widget_recent_entries">
+		<h5 class="widget-title">Posts recentes</h5>
+		<ul>
+											<li>
+					<a href="https://gostinhonobre.com.br/ola-mundo/1/">Visite a página “Quem Somos” e nos conheça um pouco mais, a página de “Contatos” também está pronta! O restante do site está em construção! Desculpem-nos pelo transtorno.</a>
+									</li>
+					</ul>
+
+		</aside><aside id="recent-comments-2" class="widget widget_recent_comments"><h5 class="widget-title">Comentários</h5><ul id="recentcomments"><li class="recentcomments"><span class="comment-author-link"><a href="https://wordpress.org/" class="url" rel="ugc external nofollow">Um comentarista do WordPress</a></span> em <a href="https://gostinhonobre.com.br/ola-mundo/1/#comment-1">Visite a página “Quem Somos” e nos conheça um pouco mais, a página de “Contatos” também está pronta! O restante do site está em construção! Desculpem-nos pelo transtorno.</a></li></ul></aside>	</section>
+</div>		</div>
+	</div>
+</section>
+<!--===// Start: Footer
+    =================================-->
+    <footer id="footer-section" class="footer-section footer footer-dark">
+					<div class="footer-main">
+				<div class="av-container">
+					<div class="av-columns-area wow fadeInDown" style="visibility: hidden; animation-name: none;">
+						<div class="av-column-3 mb-av-0 mb-4"><aside id="recent-comments-3" class="widget widget_recent_comments"><h5 class="widget-title">Comentários</h5><ul id="recentcomments-3"><li class="recentcomments"><span class="comment-author-link"><a href="https://wordpress.org/" class="url" rel="ugc external nofollow">Um comentarista do WordPress</a></span> em <a href="https://gostinhonobre.com.br/ola-mundo/1/#comment-1">Visite a página “Quem Somos” e nos conheça um pouco mais, a página de “Contatos” também está pronta! O restante do site está em construção! Desculpem-nos pelo transtorno.</a></li></ul></aside></div><div class="av-column-3 mb-av-0 mb-4"><aside id="pages-2" class="widget widget_pages"><h5 class="widget-title">Páginas</h5>
+			<ul>
+				<li class="page_item page-item-236"><a href="https://gostinhonobre.com.br/contato/">Contato</a></li>
+<li class="page_item page-item-876"><a href="https://gostinhonobre.com.br/formulario-orcamento/">Formulário Orçamento</a></li>
+<li class="page_item page-item-690"><a href="https://gostinhonobre.com.br/politica-de-privacidade/">Política de privacidade</a></li>
+<li class="page_item page-item-394"><a href="https://gostinhonobre.com.br/produtos/">Produtos</a></li>
+<li class="page_item page-item-424"><a href="https://gostinhonobre.com.br/quem-somos/">Quem Somos</a></li>
+			</ul>
+
+			</aside></div><div class="av-column-3 mb-av-0 mb-4"><aside id="archives-2" class="widget widget_archive"><h5 class="widget-title">Arquivos</h5>
+			<ul>
+					<li><a href="https://gostinhonobre.com.br/date/2021/04/">abril 2021</a></li>
+			</ul>
+
+			</aside></div><div class="av-column-3 mb-av-0 mb-4"><aside id="categories-2" class="widget widget_categories"><h5 class="widget-title">Categorias</h5>
+			<ul>
+					<li class="cat-item cat-item-1"><a href="https://gostinhonobre.com.br/category/uncategorized/sem-categoria/">Sem categoria</a>
+</li>
+			</ul>
+
+			</aside></div><div class="av-column-3 mb-av-0 mb-4"><aside id="meta-2" class="widget widget_meta"><h5 class="widget-title">Meta</h5>
+		<ul>
+						<li><a rel="nofollow" href="https://gostinhonobre.com.br/wp-login.php">Acessar</a></li>
+			<li><a href="https://gostinhonobre.com.br/feed/">Feed de posts</a></li>
+			<li><a href="https://gostinhonobre.com.br/comments/feed/">Feed de comentários</a></li>
+
+			<li><a href="https://br.wordpress.org/">WordPress.org</a></li>
+		</ul>
+
+		</aside></div>					</div>
+				</div>
+			</div>
+			
+		 <div class="footer-copyright">
+            <div class="av-container">
+                <div class="av-columns-area">
+						<div class="av-column-12 av-md-column-12">
+							<div class="footer-copy widget-center">
+								<div class="copyright-text">
+									
+
+SALGADOS GOSTINHO NOBRE LTDA.
+Rua Palmares 274, São Luiz Betim, MG. CNPJ: 15.048.672/0001-44 Matriz. Telefone: +55 31 3397-6413
+
+
+Copyright © 2026 Fábrica de Salgados Gostinho Nobre | Distribuído por <a href="https://www.nayrathemes.com/avril-free/" target="_blank">Tema Avril WordPress</a>								</div>	
+							</div>
+						</div>					
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End: Footer
+    =================================-->
+	 <!-- ScrollUp -->
+	 		<button type="button" class="scrollup"><i class="fa fa-arrow-up"></i></button>
+		
+  <!-- / -->  
+</div>
+</div>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/aera/*","/wp-content/themes/avril/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+			<script>
+				( () => {
+					const lazyloadRunObserver = () => {
+						const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+						const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+							entries.forEach( ( entry ) => {
+								if ( entry.isIntersecting ) {
+									let lazyloadBackground = entry.target;
+									if( lazyloadBackground ) {
+										lazyloadBackground.classList.add( 'e-lazyloaded' );
+									}
+									lazyloadBackgroundObserver.unobserve( entry.target );
+								}
+							});
+						}, { rootMargin: '200px 0px 200px 0px' } );
+						lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+							lazyloadBackgroundObserver.observe( lazyloadBackground );
+						} );
+					};
+					const events = [
+						'DOMContentLoaded',
+						'elementor/lazyload/observe',
+					];
+					events.forEach( ( event ) => {
+						document.addEventListener( event, lazyloadRunObserver );
+					} );
+				} )();
+			</script>
+			<script id="wow-min-js" src="https://gostinhonobre.com.br/wp-content/themes/avril/assets/js/wow.min.js?ver=7.1.2"></script>
+<script id="avril-custom-js-js" src="https://gostinhonobre.com.br/wp-content/themes/avril/assets/js/custom.js?ver=7.1.2"></script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://gostinhonobre.com.br/wp-includes/js/wp-emoji-release.min.js?ver=7.1.2"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
+//# sourceURL=https://gostinhonobre.com.br/wp-includes/js/wp-emoji-loader.min.js
 </script>
 
 
-<!-- Fecha o menu mobile ao clicar em um link -->
-
-<script>
-
-    document.querySelectorAll('.navbar .nav-link').forEach(function(link) {
-
-        link.addEventListener('click', function() {
-
-            const menu = document.querySelector('.navbar-collapse');
-
-            if (menu.classList.contains('show')) {
-
-                const bsCollapse =
-                    bootstrap.Collapse.getInstance(menu);
-
-                if (bsCollapse) {
-                    bsCollapse.hide();
-                }
-
-            }
-
-        });
-
-    });
-
-</script>
-
-</body>
-</html>
+</body></html>
